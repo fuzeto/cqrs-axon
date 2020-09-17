@@ -9,7 +9,6 @@ import br.com.fuzeto.bankaccountcommand.repository.BankAccountRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
-import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.stereotype.Component;
 
 @Slf4j
