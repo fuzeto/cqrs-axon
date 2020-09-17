@@ -5,7 +5,6 @@ import br.com.fuzeto.bankaccountcommand.event.BankAccountBalanceUpdatedEvent;
 import br.com.fuzeto.bankaccountcommand.event.BankAccountRemovedEvent;
 import br.com.fuzeto.bankaccountcommand.exception.BankAccountNotFoundException;
 import br.com.fuzeto.bankaccountcommand.model.BankAccount;
-import br.com.fuzeto.bankaccountcommand.query.FindBankAccountQuery;
 import br.com.fuzeto.bankaccountcommand.repository.BankAccountRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -43,11 +42,5 @@ public class BankAccountProjection {
         repository.deleteById(event.getId());
 
         log.info("A bank account was removed! {}", event.getId());
-    }
-
-    @QueryHandler
-    public BankAccount handle(FindBankAccountQuery query) {
-        log.debug("Handling FindBankAccountQuery query: {}", query);
-        return this.repository.findById(query.getAccountId()).orElseThrow(BankAccountNotFoundException::new);
     }
 }

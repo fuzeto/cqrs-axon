@@ -1,13 +1,11 @@
-package br.com.fuzeto.bankaccountcommand.service;
+package br.com.fuzeto.bankaccountquery.service;
 
-import br.com.fuzeto.bankaccountcommand.model.BankAccount;
-import br.com.fuzeto.bankaccountcommand.query.FindBankAccountQuery;
+import br.com.fuzeto.bankaccountquery.model.BankAccount;
+import br.com.fuzeto.bankaccountquery.query.FindBankAccountQuery;
 import lombok.AllArgsConstructor;
-import org.axonframework.eventsourcing.eventstore.EventStore;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
 import org.springframework.stereotype.Service;
-
 import java.util.concurrent.CompletableFuture;
 
 @Service

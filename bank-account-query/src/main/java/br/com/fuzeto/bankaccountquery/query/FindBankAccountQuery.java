@@ -1,4 +1,4 @@
-package br.com.fuzeto.bankaccountcommand.query;
+package br.com.fuzeto.bankaccountquery.query;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
