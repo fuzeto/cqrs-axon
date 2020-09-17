@@ -1,18 +1,16 @@
-package br.com.fuzeto.bankaccountcommand.command;
+package br.com.fuzeto.bankaccountquery.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
-import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 import java.math.BigDecimal;
 
 @Getter
 @ToString
 @AllArgsConstructor
-public class UpdateBalanceBankAccountCommand {
+public class BankAccountBalanceUpdatedEvent {
 
-    @TargetAggregateIdentifier
     public String bankId;
     public BigDecimal balance;
 }

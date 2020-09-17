@@ -4,6 +4,8 @@ import br.com.fuzeto.bankaccountcommand.command.AddBankAccountCommand;
 import br.com.fuzeto.bankaccountcommand.command.RemoveBankAccountCommand;
 import br.com.fuzeto.bankaccountcommand.command.UpdateBalanceBankAccountCommand;
 import br.com.fuzeto.bankaccountcommand.dto.BankAccountDTO;
+import br.com.fuzeto.bankaccountcommand.model.BankAccount;
+import br.com.fuzeto.bankaccountcommand.service.BankAccountService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.gateway.CommandGateway;
@@ -19,6 +21,7 @@ import java.util.concurrent.CompletableFuture;
 public class BankAccountController {
 
     private CommandGateway commandGateway;
+    private BankAccountService bankAccountService;
 
     @PostMapping
     public CompletableFuture<String> create(@RequestBody BankAccountDTO dto) {
@@ -47,4 +50,8 @@ public class BankAccountController {
         return commandGateway.send(command);
     }
 
+    @GetMapping("/{id}")
+    public CompletableFuture<BankAccount> findAccountById(@PathVariable String id) {
+        return bankAccountService.findById(id);
+    }
 }

@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/events")
 public class EventController {
 
-    public EventStore eventStore;
+    private EventStore eventStore;
 
     @GetMapping
     @RequestMapping("/{aggregateId}")
